@@ -1,0 +1,10 @@
+NameVirtualhost *:80
+
+# バーチャルホスト未定義のホスト名でアクセスがあった場合、アクセスを拒否
+<VirtualHost *:80>
+    ServerName any
+    <Location />
+        Order deny,allow
+        Deny from all
+    </Location>
+</VirtualHost>

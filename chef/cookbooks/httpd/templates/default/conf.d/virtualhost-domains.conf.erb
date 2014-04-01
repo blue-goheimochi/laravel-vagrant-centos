@@ -1,0 +1,13 @@
+# <%= @domain %>用の設定
+<VirtualHost *:80>
+    ServerName <%= @domain %>
+    DocumentRoot /var/www/<%= @domain %>/<%= @doc_root %>
+    ErrorLog logs/<%= @domain %>/error_log
+    CustomLog logs/<%= @domain %>/access_log common
+    <directory />
+        Options -MultiViews
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </directory>
+</VirtualHost>
